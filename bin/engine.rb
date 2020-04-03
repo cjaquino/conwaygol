@@ -29,6 +29,7 @@ class Engine
     while !done
       puts "Select the cells you want to start alive"
       puts "(comma separated with no spaces)"
+      puts grid
       puts "Are you done? (y or n)"
       done = true if "Yy".include?(gets.chomp)
     end

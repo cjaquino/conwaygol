@@ -9,13 +9,15 @@ class Grid
     @grid = create_grid(width, height)
   end
 
-  def print_grid
+  def to_s
+    puts ""
     @grid.each do |row|
       row.each do |cell|
-        print cell
+        print "#{cell} "
       end
       print "\n"
     end
+    ""
   end
 
   def mark_square(i, j)
