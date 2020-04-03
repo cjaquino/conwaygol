@@ -15,4 +15,8 @@ class Cell
   def live
     @state = :alive
   end
+
+  def to_s
+    @state == :dead ? "-" : "X"
+  end
 end
