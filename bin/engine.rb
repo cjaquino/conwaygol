@@ -5,7 +5,7 @@ class Engine
   def initialize
     width, height = get_dimensions
     @grid = Grid.new(width, height)
-    select_starting_markers(@grid)
+    select_starting_cells(@grid)
   end
 
   def play
@@ -24,7 +24,7 @@ class Engine
     [width, height]
   end
 
-  def select_starting_markers(grid)
+  def select_starting_cells(grid)
     puts grid
     done = false
     while !done
