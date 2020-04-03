@@ -1,7 +1,11 @@
 require_relative 'cell'
 
 class Grid
+  attr_reader :grid, :width, :height
+
   def initialize(width, height)
+    @width = width
+    @height = height
     @grid = create_grid(width, height)
   end
 
@@ -30,9 +34,3 @@ class Grid
     grid
   end
 end
-
-a = Grid.new(3,3)
-a.print_grid
-puts '___'
-a.mark_square(0,1)
-a.print_grid
