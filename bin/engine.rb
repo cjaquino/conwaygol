@@ -25,15 +25,30 @@ class Engine
   end
 
   def select_starting_markers(grid)
+    puts grid
     done = false
     while !done
-      puts "Select the cells you want to start alive"
-      puts "(comma separated with no spaces)"
+      puts "Select a cell you want to start alive"
+      coords = get_coordinate
+      i, j = coords.split(',').map(&:to_i)
+      grid.mark_cell(i, j)
+
       puts grid
-      puts "Are you done? (y or n)"
+
+      puts "Are you done selecting cells? (y or n)"
       done = true if "Yy".include?(gets.chomp)
     end
+  end
 
+  def get_coordinate
+    coord = ''
+    loop do
+      print "Cell coordinates (comma-separated):"
+      coord = gets.chomp
+      break if coord.match?(/\A[0-9]+,[0-9]+\z/)
+      puts "Please enter a coordinate in the form of i,j"
+    end
+    coord
   end
 end
 

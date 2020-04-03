@@ -20,7 +20,7 @@ class Grid
     ""
   end
 
-  def mark_square(i, j)
+  def mark_cell(i, j)
     @grid[j][i].live
   end
 
